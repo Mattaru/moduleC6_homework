@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .btn {
+            margin: 200px 0 0 200px;
+            padding: 20px;
+            font-size: 30px;
+            background-color: aquamarine;
+            border: 0.5px solid cornflowerblue;
+        }
+        .btn:hover {
+            background-color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn">Show screen size</button>
+
+    <script>
+        let screenWidth = window.screen.width;
+        let screenHeight = window.screen.height;
+
+        let screenWidth1 = window.innerWidth;
+        let screenHeight1 = window.innerHeight;
+
+        let screenWidth2 = document.documentElement.clientWidth;
+        let screenHeight2 = document.documentElement.clientHeight;
+
+        document.querySelector(".btn").addEventListener("click", () => {
+            alert(`
+            Screen width: ${screenWidth}\n
+            Screen height: ${screenHeight}\n
+            Window width with scroll line: ${screenWidth1}\n
+            Window width with scroll line: ${screenHeight1}\n
+            Window width without scroll path: ${screenWidth2}\n
+            Window width with scroll path: ${screenHeight2}
+            `);
+        })
+    </script>
+</body>
+</html>
